@@ -1,0 +1,81 @@
+/* Estilos generales */
+ion-header {
+  --background: #BB9360;
+  --color: #fff;
+}
+
+ion-toolbar {
+  --background: #BB9360;
+}
+
+ion-content {
+  --background: #fff;
+}
+
+.input-item {
+  --background: #DEE2E6;
+  border-radius: 25px;
+  margin-bottom: 16px;
+}
+
+.validate-button {
+  --background: #0F2A3F;
+  color: #ffffff;
+  border-radius: 6px;
+  margin-top: 8px;
+  box-shadow: 0px 5px 10px rgba(248, 95, 106, 0.23);
+}
+
+.button-style {
+  --background: #0F2A3F;
+  color: #ffffff;
+  border-radius: 6px;
+  font-family: 'Asap';
+  font-weight: 600;
+  font-size: 17px;
+  text-align: center;
+  box-shadow: 0px 5px 10px rgba(248, 95, 106, 0.23);
+}
+
+/* Estilos para la lista de cuentas con scroll */
+.account-list {
+  max-height: 200px; /* Limitar la altura del ion-list */
+  overflow-y: auto; /* Permitir desplazamiento vertical */
+  margin-top: 16px;
+}
+
+ion-item {
+  --background: #F4FAFC;
+  border: 3px solid #0F2A3F;
+  border-radius: 25px;
+  margin-bottom: 10px;
+  padding: 8px;
+}
+
+ion-item.selected-account {
+  --background: #E1ECF4;
+  border-color: #0F2A3F;
+}
+
+.account-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Helvetica';
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.cuenta-label {
+  color: #000000;
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.cuenta-amount {
+  color: #000000;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+}

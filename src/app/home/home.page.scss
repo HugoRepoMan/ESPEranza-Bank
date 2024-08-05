@@ -1,0 +1,107 @@
+:host {
+  ion-toolbar {
+    --background: #ffffff;
+    --color: #BB9360;
+    font-family: 'Asap', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  ion-content {
+    --background: #F4FAFC;
+  }
+
+  .input-item {
+    --background: rgba(222, 226, 230, 0.5);
+    border-radius: 25px;
+    margin-bottom: 10px;
+
+    ion-label {
+      font-family: 'Asap', sans-serif;
+      font-size: 15px;
+      color: #989EB1;
+    }
+
+    ion-input {
+      font-family: 'Roboto', sans-serif; /* Cambié la fuente a 'Roboto' */
+      font-size: 18px;
+      color: #000000;
+    }
+  }
+
+  .account-item {
+    background-color: #F4FAFC !important;
+    border: 3px solid #0F2A3F;
+    border-radius: 25px;
+    margin-bottom: 10px;
+
+    ion-label {
+      font-family: 'Helvetica', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: #000000;
+    }
+
+    ion-badge {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 18px;
+      color: #000000;
+    }
+  }
+
+  .validate-button, .transfer-button {
+    --background: #0F2A3F;
+    color: #ffffff;
+    box-shadow: 0px 5px 10px rgba(248, 95, 106, 0.23);
+    border-radius: 6px;
+    margin-bottom: 10px;
+
+    font-family: 'Asap', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+  }
+
+  .account-list {
+    max-height: 200px; /* Ajusta la altura */
+    overflow-y: auto;
+  }
+
+  .account-balance {
+    margin-left: 10px; /* Ajusta según el espacio necesario */
+    font-weight: bold;
+    color: #3880ff; /* Ajusta el color según el diseño */
+  }
+
+  .account-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+  }
+
+  ion-item {
+    --inner-padding-end: 0; /* Ajuste del padding */
+  }
+
+  .saldo {
+    display: inline-block;
+    margin-right: 8px;
+    font-weight: bold;
+    color: #3880ff; /* Color del saldo */
+  }
+
+  /* Estilos personalizados para la alerta */
+  .custom-alert .alert-message {
+    font-family: 'Asap', sans-serif;  /* Fuente para el mensaje de la alerta */
+    font-size: 16px;
+    color: #000; /* Color del texto en la alerta */
+  }
+
+  .custom-alert .alert-header {
+    font-family: 'Asap', sans-serif;  /* Fuente para el encabezado de la alerta */
+    font-size: 18px;
+    font-weight: bold;
+    color: #BB9360; /* Color del encabezado en la alerta */
+  }
+}

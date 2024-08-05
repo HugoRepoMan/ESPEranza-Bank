@@ -1,0 +1,98 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Transferencias Interbancarias</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <ion-item class="input-item">
+          <ion-label position="floating">Ingrese Cantidad</ion-label>
+          <ion-input type="text" [(ngModel)]="cantidad" [readonly]="!isEditable" [ngClass]="{'readonly-field': !isEditable}"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-list>
+          <ion-item *ngFor="let account of accounts">
+            <ion-checkbox slot="start" [checked]="account.checked" (ionChange)="onCheckChange(account); loadSaldo(account)"></ion-checkbox>
+            <ion-label>
+              N° {{ account.number }}
+            </ion-label>
+            <ion-note slot="end">
+              $ {{ account.saldo !== null ? account.saldo : '0' }}
+            </ion-note>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-item class="input-item">
+          <ion-label position="floating">Ingrese Número de cuenta</ion-label>
+          <ion-input type="text" [(ngModel)]="accountNumber"></ion-input>
+        </ion-item>
+        <ion-button expand="block" class="validate-button" (click)="validateAccount()">Validar</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-item class="input-item">
+          <ion-label position="floating">Número de cédula</ion-label>
+          <ion-input type="text" [(ngModel)]="id" [readonly]="!isEditable" [ngClass]="{'readonly-field': !isEditable}"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-item class="input-item">
+          <ion-label position="floating">Ingrese el banco</ion-label>
+          <ion-input type="text" [(ngModel)]="banco" [readonly]="!isEditable" [ngClass]="{'readonly-field': !isEditable}"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-item class="input-item">
+          <ion-label position="floating">Tipo de cuenta</ion-label>
+          <ion-input type="text" [(ngModel)]="tipoCuenta" [readonly]="!isEditable" [ngClass]="{'readonly-field': !isEditable}"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-item class="input-item">
+          <ion-label position="floating">Nombre del titular</ion-label>
+          <ion-input type="text" [(ngModel)]="nombreTitular" [readonly]="!isEditable" [ngClass]="{'readonly-field': !isEditable}"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="showCheckbox">
+      <ion-col size="12">
+        <ion-item lines="none">
+          <ion-checkbox slot="start" [(ngModel)]="agregarContacto" [disabled]="!isEditable"></ion-checkbox>
+          <ion-label>Agregar a contactos</ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-button expand="block" class="transfer-button" (click)="transfer()">Transferir</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

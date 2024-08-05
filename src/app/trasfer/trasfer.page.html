@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Transferencias</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <!-- Ingrese Cantidad -->
+    <ion-row>
+      <ion-col size="12">
+        <ion-item class="input-item">
+          <ion-label position="floating">Ingrese Cantidad</ion-label>
+          <ion-input type="number" [(ngModel)]="amount"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <!-- Cuentas -->
+    <ion-list>
+      <ion-item *ngFor="let account of accounts">
+        <ion-checkbox slot="start" [(ngModel)]="account.selected" (ionChange)="onCheckChange(account)"></ion-checkbox>
+        <ion-label>
+          {{ account.number }}
+        </ion-label>
+        <ion-note slot="end">
+          {{ account.balance | currency:'USD':'symbol' }}
+        </ion-note>
+      </ion-item>
+    </ion-list>
+
+    <!-- Número de cuenta -->
+    <ion-row>
+      <ion-col size="12">
+        <ion-item class="input-item" style="background-color: #DEE2E6;">
+          <ion-label position="floating">Ingrese Número de cuenta</ion-label>
+          <ion-input type="text" [(ngModel)]="accountNumber"></ion-input>
+        </ion-item>
+        <ion-button expand="block" class="validate-button" (click)="validateAccount()">Validar</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <!-- Checkbox -->
+    <ion-item lines="none" *ngIf="addToContacts">
+      <ion-checkbox slot="start" [(ngModel)]="addToContacts"></ion-checkbox>
+      <ion-label>Agregar a contactos</ion-label>
+    </ion-item>
+
+    <!-- Botones -->
+    <ion-button expand="block" class="button-style" (click)="transfer(amount, fromAccount)">Transferir</ion-button>
+    <ion-button expand="block" class="button-style" routerLink="/home">Transferencia Interbancaria</ion-button>
+  </ion-grid>
+</ion-content>
